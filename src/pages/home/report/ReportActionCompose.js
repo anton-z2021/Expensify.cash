@@ -163,8 +163,10 @@ class ReportActionCompose extends React.Component {
                             addAction(this.props.reportID, '', file);
                             this.setTextInputShouldClear(false);
                             setTimeout(() => {
-                                this.textInput && this.textInput.focus();
-                            }, 500);
+                                if (this.textInput) {
+                                    this.textInput.focus();
+                                }
+                            }, 1000);
                         }}
                     >
                         {({displayFileInModal}) => (
